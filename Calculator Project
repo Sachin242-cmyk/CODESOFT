@@ -1,0 +1,52 @@
+#Task_1:Design a simple calculator with basic arithmetic operations.
+
+
+def add(P, Q):
+   # This function is used for adding two numbers
+   return P + Q
+def subtract(P, Q):
+   # This function is used for subtracting two numbers
+   return P - Q
+def multiply(P, Q):
+   # This function is used for multiplying two numbers
+   return P * Q
+def divide(P, Q):
+    if Q == 0:
+        return "Divison by zero is not allowed."
+   # This function is used for dividing two numbers
+        return P / Q
+# Now we will take inputs from the user
+print ("Please select the operation.")
+print ("a. Add")
+print ("b. Subtract")
+print ("c. Multiply")
+print ("d. Divide")
+
+while True:
+    choice = input("Please enter choice (a/ b/ c/ d): ")
+    #check if choice is one of the four options
+    if choice in ('a','b','c','d'):
+         try:
+            num_1=float(input("Enter 1st number: "))
+            num_2=float(input("Enter 2nd number: "))
+         except value_error:
+            print("Invalid input.Please enter a number.")
+            continue
+
+
+    #Performing operations user want to execute
+    if(choice=='a'):
+        print(num_1, '+', num_2,'=',add(num_1,num_2))
+    elif(choice=='b'):
+        print(num_1, '-',num_2, '=',subtract(num_1,num_2))
+    elif(choice=='c'):
+        print(num_1, '*', num_2, '=',multiply(num_1,num_2))
+    elif(choice=='d'):
+        print(num_1, '/',num_2,'=',divide(num_1,num_2))
+
+    #check if user want another calculation
+    next_calculation=input("Let's do another calculation? (yes/no): ")
+    if(next_calculation=='no'):
+        break
+    elif(next_calculation=='yes'):
+        print("Let's do another calculation")
